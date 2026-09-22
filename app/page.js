@@ -465,16 +465,18 @@ export default function HomePage() {
 
 
 
-            <a
-              href="https://wa.me/6281916875386?text=Assalamualaikum%2C%20saya%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20Yayasan%20Amar%20Makruf%20Hubbul%20Aytam."
-              className="contact-wa-btn fade-in visible fade-in-delay-3"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Hubungi Yayasan melalui WhatsApp"
-            >
-              <i className="bi bi-whatsapp" aria-hidden="true"></i>
-              Hubungi via WhatsApp
-            </a>
+            <div className="contact-btn-wrap">
+              <a
+                href="https://wa.me/6281916875386?text=Assalamualaikum%2C%20saya%20ingin%20mengetahui%20lebih%20lanjut%20tentang%20Yayasan%20Amar%20Makruf%20Hubbul%20Aytam."
+                className="contact-wa-btn fade-in visible fade-in-delay-3"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hubungi Yayasan melalui WhatsApp"
+              >
+                <i className="bi bi-whatsapp" aria-hidden="true"></i>
+                <span>Hubungi via WhatsApp</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
