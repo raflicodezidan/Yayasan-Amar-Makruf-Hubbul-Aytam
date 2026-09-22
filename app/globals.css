@@ -1,0 +1,1341 @@
+/* ============================================================
+   YAYASAN YATIM AMAR MAKRUF HUBBUL AYTAM
+   Design Version: 1.0  |  Style: Islamic / Social / Modern
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ── CSS Variables ────────────────────────────────────────── */
+:root {
+  --primary-green:  #2DBE4F;
+  --dark-green:     #159447;
+  --bright-green:   #00B84F;
+  --light-green:    #EAF8EE;
+  --whatsapp-green: #00C853;
+
+  --white:          #FFFFFF;
+  --background:     #F7F7F7;
+  --border:         #E5E5E5;
+
+  --text-dark:      #222222;
+  --text-gray:      #777777;
+
+  --danger:         #FF0000;
+
+  --shadow-sm:  0 4px 15px rgba(0,0,0,0.07);
+  --shadow-md:  0 8px 25px rgba(0,0,0,0.08);
+  --shadow-lg:  0 12px 35px rgba(0,0,0,0.10);
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --transition: all 0.3s ease;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  color: var(--text-dark);
+  font-size: 15px;
+  line-height: 1.6;
+  background: var(--white);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* ── Container ────────────────────────────────────────────── */
+.container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}
+
+/* ── Utility ──────────────────────────────────────────────── */
+.section-tag {
+  display: inline-block;
+  background: transparent !important;
+  color: var(--dark-green);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: var(--text-gray);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+
+
+/* ============================================================
+   NAVBAR (STICKY, ENLARGED & ENHANCED)
+   ============================================================ */
+.navbar {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84px;
+  width: min(1280px, 94%);
+  margin: 0 auto;
+  gap: 24px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.navbar-logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 0;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  transform: scale(1.04);
+}
+
+.logo-icon {
+  width: 46px;
+  height: 46px;
+  background: var(--primary-green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 22px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text span:first-child {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-green);
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+}
+
+.logo-text span:last-child {
+  font-size: 12px;
+  color: var(--text-gray);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.nav-link {
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-green);
+  background: var(--light-green);
+}
+
+.nav-link.active {
+  color: var(--dark-green);
+  font-weight: 600;
+}
+
+/* Donate Button — Paling Pojok Kanan */
+.btn-donation {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-green);
+  color: var(--white);
+  border: 2px solid var(--primary-green);
+  border-radius: var(--radius-md);
+  padding: 12px 26px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(45, 190, 79, 0.3);
+}
+
+.btn-donation:hover {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(21, 148, 71, 0.4);
+}
+
+/* Hamburger */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  color: var(--text-dark);
+  font-size: 22px;
+  transition: var(--transition);
+}
+
+.mobile-menu-btn:hover { background: var(--light-green); color: var(--primary-green); }
+
+/* Mobile Drawer */
+.mobile-nav {
+  display: none;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 12px 0 20px;
+}
+
+.mobile-nav.open { display: block; }
+
+.mobile-nav .nav-link {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+.mobile-nav-footer {
+  padding: 16px 20px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.mobile-nav-footer .btn-donation {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 520px;
+  background-image: url('/assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 88px 0 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 38, 20, 0.76) 0%,
+    rgba(10, 32, 16, 0.65) 50%,
+    rgba(8, 24, 12, 0.82) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #bbf7d0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--bright-green);
+  text-transform: uppercase;
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e0f7ea;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+.hero-desc {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  color: rgba(255,255,255,0.88);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--primary-green);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid var(--primary-green);
+}
+
+.btn-hero-primary:hover {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(45,190,79,0.4);
+}
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-hero-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+}
+
+/* ============================================================
+   TENTANG KAMI
+   ============================================================ */
+.about {
+  padding: 88px 0;
+  background: var(--light-green);
+}
+
+/* Layout: gambar di atas, konten di bawah — dipusatkan */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Gambar profil — landscape 16:9, full-width dengan tinggi tetap */
+.about-image-wrap {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.about-image-wrap img {
+  width: 100%;
+  height: 460px;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+}
+
+/* Badge tahun — pojok kanan bawah gambar */
+.about-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-green);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(45,190,79,0.45);
+  backdrop-filter: blur(4px);
+}
+
+.about-badge .badge-year {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+}
+
+.about-badge .badge-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Konten teks — tengah */
+.about-content {
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.about-content .section-tag {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.about-content .section-title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.about-content .section-desc {
+  text-align: left;
+  max-width: 100%;
+}
+
+.about-visi {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary-green);
+  text-align: left;
+}
+
+.about-visi h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark-green);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.about-visi p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.65;
+}
+
+.about-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.about-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.about-list-item i {
+  color: var(--primary-green);
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+/* ============================================================
+   KEGIATAN / GALLERY (UNBOXED & FORMAL)
+   ============================================================ */
+.activities {
+  padding: 92px 0;
+  background: var(--white);
+}
+
+.activities-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.activities-header .section-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.activities-header .section-desc {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-gray);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 72px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Card kegiatan — bersih tanpa border */
+.activity-card {
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  transition: var(--transition);
+  cursor: default;
+  width: 100%;
+}
+
+.activity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+
+/* Gambar Kegiatan — 16:9 professional */
+.activity-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 10px 36px rgba(0,0,0,0.12);
+  line-height: 0;
+}
+
+.activity-img-wrap img {
+  width: 100%;
+  height: 480px;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-img-wrap img {
+  transform: scale(1.03);
+}
+
+/* Activity Slider — overlay fade */
+.activity-slider {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+}
+
+.activity-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+}
+
+.activity-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.activity-slide img {
+  width: 100%;
+  height: 480px;
+  display: block;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.5s ease;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: var(--white);
+  width: 24px;
+  border-radius: 12px;
+}
+
+.slider-dot:hover {
+  background: var(--white);
+}
+
+/* Placeholder cards (no image) */
+.activity-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--light-green);
+  color: var(--dark-green);
+}
+
+.activity-placeholder i { font-size: 42px; opacity: 0.75; }
+.activity-placeholder span { font-size: 14px; font-weight: 600; opacity: 0.85; }
+
+.activity-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%);
+  opacity: 0;
+  transition: var(--transition);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.activity-card:hover .activity-overlay { opacity: 1; }
+
+.activity-overlay span {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.activity-info {
+  padding: 22px 4px 0 4px;
+}
+
+.activity-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.activity-info p {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   DONATION CTA BANNER
+   ============================================================ */
+.donation-cta {
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 60%, #3dd662 100%);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.donation-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.07) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+}
+
+.donation-cta .container { position: relative; z-index: 1; }
+
+.donation-cta .section-tag {
+  background: transparent !important;
+  color: #e0f7ea !important;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.donation-cta h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.donation-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+/* ── Quote Cards — Ayat & Hadits ── */
+.quran-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.quote-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  padding: 28px 24px 22px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.quote-icon {
+  font-size: 32px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1;
+  font-family: serif;
+  margin-bottom: -4px;
+}
+
+.quote-arabic {
+  font-size: 18px;
+  color: #ffffff;
+  line-height: 2;
+  direction: rtl;
+  font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.quote-trans {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-source {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-top: auto;
+}
+
+.btn-donate-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--dark-green);
+  padding: 16px 40px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-donate-main:hover {
+  background: var(--light-green);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* ============================================================
+   KONTAK
+   ============================================================ */
+.contact {
+  padding: 88px 0;
+  background: var(--background);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.contact-header .section-desc { margin: 0 auto; text-align: center; }
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--light-green);
+  color: var(--dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 14px;
+}
+
+.contact-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.contact-card p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  padding: 16px 40px;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  max-width: 360px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0,200,83,0.3);
+}
+
+.contact-wa-btn:hover {
+  background: #00a843;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,200,83,0.4);
+}
+
+.contact-wa-btn i { font-size: 20px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--dark-green);
+  color: var(--white);
+  padding: 48px 0 0;
+}
+
+.footer-main {
+  display: flex;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-brand { flex: 1.5; }
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.footer-logo img,
+.footer-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.footer-logo .logo-icon {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.footer-logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.footer-logo-text span {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.7;
+  display: block;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+.footer-col { flex: 1; }
+
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.68);
+  transition: var(--transition);
+}
+
+.footer-col ul li a:hover { color: var(--white); padding-left: 4px; }
+
+.footer-nav-cols {
+  display: contents;
+}
+
+
+
+.footer-bottom {
+  padding: 18px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-bottom span { color: rgba(255,255,255,0.85); }
+
+/* ============================================================
+   FLOATING WHATSAPP
+   ============================================================ */
+.whatsapp-floating {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 999;
+  box-shadow: 0 6px 20px rgba(0,200,83,0.4);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-floating:hover {
+  background: #00a843;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 10px 30px rgba(0,200,83,0.5);
+}
+
+.whatsapp-badge {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+}
+
+/* Pulse animation */
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  80%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.whatsapp-floating::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  animation: pulse-ring 2.4s ease-out infinite;
+  z-index: -1;
+}
+
+/* ============================================================
+   FADE IN ANIMATION
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+.fade-in-delay-5 { transition-delay: 0.5s; }
+
+
+/* ============================================================
+   RESPONSIVE — LARGE DESKTOP (≤ 1440px)
+   ============================================================ */
+@media (max-width: 1440px) {
+  .hero-title { font-size: 46px; }
+}
+
+/* ============================================================
+   RESPONSIVE — LAPTOP / TABLET LANDSCAPE (≤ 1199px)
+   ============================================================ */
+@media (max-width: 1199px) {
+  .section-title       { font-size: 26px; }
+  .hero-title          { font-size: 38px; }
+  .about-grid          { gap: 40px; }
+  .activities-grid     { max-width: 720px; }
+  .activity-img-wrap img,
+  .activity-slide img  { height: 380px; }
+  .activity-slider     { height: 380px; }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET PORTRAIT (≤ 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .navbar .container   { min-height: 76px; }
+  .hero-title          { font-size: 34px; }
+  .hero-subtitle       { font-size: 18px; }
+
+  .about-grid          { gap: 32px; max-width: 680px; }
+  .about-image-wrap img { height: 380px; }
+
+  .activities-grid     { max-width: 640px; gap: 56px; }
+  .activity-img-wrap img,
+  .activity-slide img  { height: 340px; }
+  .activity-slider     { height: 340px; }
+
+  .contact-cards       { grid-template-columns: repeat(2, 1fr); max-width: 560px; }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE TABLET / PHONE (≤ 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* ── Topbar ── */
+  .topbar { display: none; }
+
+  /* ── Navbar ── */
+  .navbar .container   { min-height: 64px; gap: 0; padding: 0 16px; }
+  .nav-menu            { display: none; }
+  .btn-donation        { display: none; }
+  .mobile-menu-btn     { display: flex; }
+  .navbar-logo-img     { width: 44px; height: 44px; }
+  .logo-text span:first-child { font-size: 11px; }
+  .logo-text span:last-child  { font-size: 9px; }
+
+  /* ── Mobile menu overlay ── */
+  .mobile-menu { padding: 20px 0; }
+  .mobile-nav-link { font-size: 16px; padding: 14px 24px; }
+
+  /* ── Hero ── */
+  .hero            { min-height: 420px; padding: 56px 0 48px; }
+  .hero-title      { font-size: 26px; line-height: 1.25; }
+  .hero-subtitle   { font-size: 16px; margin-bottom: 12px; }
+  .hero-desc       { font-size: 14px; padding: 0 4px; margin-bottom: 22px; }
+  .hero-eyebrow    { font-size: 12px; margin-bottom: 14px; }
+  .hero-actions    { flex-direction: column; gap: 12px; align-items: center; }
+  .btn-primary,
+  .btn-secondary   { width: 100%; max-width: 280px; justify-content: center; }
+
+  /* ── Stats Bar ── */
+  .stats-bar       { padding: 24px 0; }
+  .stats-grid      { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+  .stat-number     { font-size: 28px; }
+  .stat-label      { font-size: 12px; }
+
+  /* ── About / Profil Yayasan ── */
+  .about           { padding: 56px 0; }
+  .about-grid      { gap: 28px; max-width: 100%; }
+  .about-image-wrap img { height: 240px; }
+  .about-badge     { bottom: 14px; right: 14px; padding: 10px 14px; }
+  .about-badge .badge-year  { font-size: 22px; }
+  .about-badge .badge-label { font-size: 10px; }
+  .about-content   { padding: 0; }
+  .about-content .section-title { font-size: 22px; }
+  .about-visi      { padding: 16px; }
+  .section-desc    { font-size: 14px; }
+
+  /* ── Activities / Kegiatan ── */
+  .activities      { padding: 56px 0; }
+  .activities-grid { gap: 48px; max-width: 100%; }
+  .activities-header .section-title { font-size: 22px; }
+  .activities-header .section-desc  { font-size: 14px; }
+  .activity-img-wrap img,
+  .activity-slide img { height: 260px; }
+  .activity-slider    { height: 260px; }
+  .activity-info h3   { font-size: 17px; }
+  .activity-info p    { font-size: 14px; }
+  .slider-dots        { bottom: 10px; right: 12px; padding: 5px 10px; gap: 6px; }
+  .slider-dot         { width: 8px; height: 8px; }
+  .slider-dot.active  { width: 18px; }
+
+  /* ── Donation CTA ── */
+  .donation-cta    { padding: 56px 0; }
+  .donation-cta h2 { font-size: 22px; }
+  .donation-cta p  { font-size: 14px; padding: 0 4px; }
+  .btn-donate-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* ── Quote Cards ── */
+  .quran-quotes    { grid-template-columns: 1fr; gap: 16px; max-width: 420px; }
+  .quote-arabic    { font-size: 16px; }
+  .quote-trans     { font-size: 13px; }
+
+  /* ── Contact ── */
+  .contact         { padding: 56px 0; }
+  .contact-cards   { grid-template-columns: 1fr; max-width: 340px; gap: 16px; }
+
+  /* ── Footer ── */
+  .footer          { padding: 44px 0 0; }
+  .footer-main     { flex-direction: column; gap: 26px; text-align: center; padding-bottom: 28px; }
+  .footer-logo     { justify-content: center; margin: 0 auto 12px; }
+  .footer-logo-text { text-align: left; }
+  .footer-brand p  { max-width: 360px; margin: 0 auto; font-size: 13.5px; line-height: 1.65; }
+  .footer-nav-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .footer-col.footer-col-contact {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+  }
+  .footer-col h4   { font-size: 13px; margin-bottom: 12px; letter-spacing: 0.6px; }
+  .footer-col ul   { gap: 8px; align-items: center; }
+  .footer-col ul li a { font-size: 13.5px; }
+  .footer-bottom   { flex-direction: column; gap: 8px; text-align: center; font-size: 12px; line-height: 1.6; padding: 18px 0 24px; }
+
+  /* ── Floating WhatsApp ── */
+  .whatsapp-floating { width: 50px; height: 50px; right: 16px; bottom: 16px; font-size: 22px; }
+
+  /* ── Section globals ── */
+  .section-title   { font-size: 22px; }
+  .section-tag     { font-size: 11px; }
+
+  /* ── Container padding ── */
+  .container       { padding: 0 18px; }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL PHONE (≤ 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  .hero-title      { font-size: 23px; }
+  .hero-subtitle   { font-size: 15px; }
+  .stats-grid      { grid-template-columns: repeat(2, 1fr); }
+  .about-image-wrap img { height: 210px; }
+  .activity-img-wrap img,
+  .activity-slide img { height: 220px; }
+  .activity-slider    { height: 220px; }
+  .section-title   { font-size: 20px; }
+  .about-badge     { padding: 8px 12px; }
+  .about-badge .badge-year { font-size: 18px; }
+}
+
+/* ============================================================
+   RESPONSIVE — EXTRA SMALL (≤ 375px)
+   ============================================================ */
+@media (max-width: 375px) {
+  .hero-title      { font-size: 20px; }
+  .navbar-logo-img { width: 38px; height: 38px; }
+  .logo-text span:first-child { font-size: 10px; }
+  .logo-text span:last-child  { display: none; }
+  .stats-grid      { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .activity-img-wrap img,
+  .activity-slide img { height: 195px; }
+  .activity-slider    { height: 195px; }
+  .about-image-wrap img { height: 185px; }
+}
